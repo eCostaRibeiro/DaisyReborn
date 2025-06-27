@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Validador de URLs",
+  "version": "3.0",
+  "description": "Valida URLs e classifica por status.",
+  "permissions": ["tabs", "storage", "scripting", "clipboardWrite"],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
